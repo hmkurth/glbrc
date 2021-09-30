@@ -1,7 +1,7 @@
 <Context docBase="glbrc" path="/glbrc" reloadable="true">
     <Realm className="org.apache.catalina.realm.JDBCRealm"
-           driverName="com.mysql.cj.jdbc.Driver"
-           connectionURL="jdbc:mysql://localhost:3306/sample?user=tomcat&amp;password=tomcat"
+           driverName="org.postgresql.Driver"
+           connectionURL="jdbc:postgresql://localhost:5432/postgres"
            userTable="user" userNameCol="user_name" userCredCol="password"
            userRoleTable="user_roles" roleNameCol="role_name" >
     </Realm>

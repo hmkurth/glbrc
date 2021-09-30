@@ -20,16 +20,16 @@ public class Database {
     // create an object of the class Database
     private static Database instance = new Database();
 
-    private Properties properties;
+    //private Properties properties;
 
     private Connection connection;
 
     // private constructor prevents instantiating this class anywhere else
     private Database() {
-        loadProperties();
+        //loadProperties();
 
     }
-
+/*
     private void loadProperties() {
         properties = new Properties();
         try {
@@ -43,6 +43,8 @@ public class Database {
         }
 
     }
+*/
+
 
     // get the only Database object available
     public static Database getInstance() {
@@ -63,13 +65,8 @@ public class Database {
         if (connection != null)
             return;
 
-        try {
-            Class.forName(properties.getProperty("driver"));
-        } catch (ClassNotFoundException e) {
-            throw new Exception("Database.connect()... Error: MySQL Driver not found");
-        }
 
-        String url = properties.getProperty("url");
+        //String url = properties.getProperty("url");
         connection = getConnection();
     }
 

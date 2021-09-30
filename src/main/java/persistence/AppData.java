@@ -2,6 +2,8 @@ package persistence;
 
 
 
+import model.App;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,17 +12,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Access Appss in the Apps table.
+ * Access Apps in the App table.
  *
  * @author pwaite
  */
 public class AppData {
 
-    public List<Apps> getAllAppss() {
-        List<Apps> Appss = new ArrayList<Apps>();
+    public List<App> getAllApps() {
+        List<App> Apps = new ArrayList<App>();
         Database database = Database.getInstance();
         Connection connection = null;
-        String sql = "SELECT * FROM Appss";
+        String sql = "SELECT * FROM Apps";
 
         try {
             database.connect();
@@ -28,25 +30,25 @@ public class AppData {
             Statement selectStatement = connection.createStatement();
             ResultSet results = selectStatement.executeQuery(sql);
             while (results.next()) {
-                Apps employee = createAppsFromResults(results);
-                Appss.add(employee);
+                App employee = createAppFromResults(results);
+                Apps.add(employee);
             }
             database.disconnect();
         } catch (SQLException e) {
-            System.out.println("SearchApps.getAllAppss()...SQL Exception: " + e);
+            System.out.println("SearchApp.getAllApps()...SQL Exception: " + e);
         } catch (Exception e) {
-            System.out.println("SearchApps.getAllAppss()...Exception: " + e);
+            System.out.println("SearchApp.getAllApps()...Exception: " + e);
         }
-        return Appss;
+        return Apps;
     }
 
-    //TODO add a method or methods to return a Appss based on search criteria
+    //TODO add a method or methods to return a Apps based on search criteria
 
-    private Apps createAppsFromResults(ResultSet results) throws SQLException {
-        Apps Apps = new Apps();
-        Apps.setLastName(results.getString("last_name"));
+    private App createAppFromResults(ResultSet results) throws SQLException {
+        App App = new App();
+        App.setName(results.getString("name"));
         // TODO map the remaining fields
-        return Apps;
+        return App;
     }
 
 }

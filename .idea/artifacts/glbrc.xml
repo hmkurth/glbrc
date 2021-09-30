@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="glbrc">
+    <output-path>$PROJECT_DIR$/out/artifacts/glbrc</output-path>
+    <root id="archive" name="glbrc.war" />
+  </artifact>
+</component>

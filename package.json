@@ -1,0 +1,22 @@
+{
+  "name": "glbrc",
+  "version": "1.0.0",
+  "description": "test application for GLRBC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmkurth/glbrc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hmkurth/glbrc/issues"
+  },
+  "homepage": "https://github.com/hmkurth/glbrc#readme",
+  "dependencies": {
+    "startbootstrap-sb-admin-2": "^4.1.4"
+  }
+}

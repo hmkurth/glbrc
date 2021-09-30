@@ -43,6 +43,7 @@ public class DashboardControl  extends HttpServlet {
             throws ServletException, IOException {
         ServletOutputStream out = resp.getOutputStream();
         out.write("hello heroku".getBytes());
+        logger.info("Logging from dashboard control servlet");
         out.flush();
         out.close();
     }

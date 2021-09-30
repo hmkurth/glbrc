@@ -1,1 +1,1 @@
-web: java -jar target/glbrc-1.0.jar
+web: sh target/bin/webapp

@@ -1,11 +1,6 @@
 package launch;
 
 import java.io.File;
-import java.net.URI;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
 
 import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.core.StandardContext;
@@ -19,26 +14,6 @@ public class Main {
 
         String webappDirLocation = "src/main/webapp/";
         Tomcat tomcat = new Tomcat();
-    //set up database connection
-        Connection connection = getConnection();
-
-        Statement stmt = connection.createStatement();
-        stmt.executeUpdate("DROP TABLE IF EXISTS ticks");
-        stmt.executeUpdate("CREATE TABLE ticks (tick timestamp)");
-        stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
-        ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
-        while (rs.next()) {
-            System.out.println("Read from DB: " + rs.getTimestamp("tick"));
-        }
-        private static Connection getConnection() throws URISyntaxException, SQLException {
-            URI dbUri = new URI(System.getenv("DATABASE_URL"));
-
-            String username = dbUri.getUserInfo().split(":")[0];
-            String password = dbUri.getUserInfo().split(":")[1];
-            String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
-
-            return DriverManager.getConnection(dbUrl, username, password);
-        }
 
         //The port that we should run on can be set into an environment variable
         //Look for that variable and default to 8080 if it isn't there.

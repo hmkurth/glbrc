@@ -8,6 +8,9 @@
   <name>glbrc</name>
   <url>http://maven.apache.org</url>
   <properties>
+    <javax.version>7.0</javax.version>
+    <!-- make sure your mysql driver version matches your mysql version -->
+    <mysql-version>8.0.23</mysql-version>
     <log4j-version>2.10.0</log4j-version>
     <tomcat.version>8.5.23</tomcat.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -15,6 +18,37 @@
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.16</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>5.4.4.Final</version>
+    </dependency>
+    <!-- c3p0 - used to handle connection pooling with hibernate -->
+    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0 -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-c3p0</artifactId>
+      <version>5.4.4.Final</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-web-api</artifactId>
+      <version>${javax.version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>${mysql-version}</version>
+    </dependency>
 
     <dependency>
       <groupId>org.postgresql</groupId>

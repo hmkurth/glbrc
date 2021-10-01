@@ -10,10 +10,10 @@ public class App {
     private String name;
     private String description;
     private String color;
-    private boolean defaultStatus;
+    private String defaultStatus;
     private String link;
 
-    public App(String name, String description, String color, boolean defaultStatus, String link) {
+    public App(String name, String description, String color, String defaultStatus, String link) {
         this.name = name;
         this.description = description;
         this.color = color;
@@ -50,11 +50,11 @@ public class App {
         this.color = color;
     }
 
-    public boolean isDefaultStatus() {
+    public String getDefaultStatus() {
         return defaultStatus;
     }
 
-    public void setDefaultStatus(boolean defaultStatus) {
+    public void setDefaultStatus(String defaultStatus) {
         this.defaultStatus = defaultStatus;
     }
 

@@ -21,7 +21,7 @@ public class App {
         this.link = link;
     }
 
-
+/*TODO model validation, not quite sure what that entails....*/
 
     public App() {
     }
